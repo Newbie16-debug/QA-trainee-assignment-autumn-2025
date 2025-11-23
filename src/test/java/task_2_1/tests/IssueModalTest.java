@@ -22,7 +22,6 @@ public class IssueModalTest {
         TestsConfig.init();
     }
 
-    @Disabled
     @Test
     @DisplayName("Создание таски при заполнении всех необходимых полей")
     void canCreateIssueWithNecessaryFields() {
@@ -42,7 +41,6 @@ public class IssueModalTest {
                 .shouldBe(visible);
     }
 
-    @Disabled
     @Test
     @DisplayName("Кнопка Создать неактивна, если не заполнить все необходимые поля")
     void cantCreateIssueWithoutNecessaryFields() {
@@ -56,19 +54,4 @@ public class IssueModalTest {
         buttonCreateIssue.shouldNotBe(Condition.enabled);
     }
 
-//    @Test
-//    @DisplayName("Пустая строка в поле Название -> кнопка Обновить неактивна")
-//    void editIssue() {
-//        open("/");
-//        //IssueEditModal issueEditModal = new IssueEditModal().openIssueEditModal("Оптимизация загрузки медиа-контента");
-//        IssueEditModal issueEditModal = new IssueEditModal().openIssueEditModal("Оптимизация использования памяти");
-//        Selenide.sleep(2000);
-//        //issueEditModal.setTitleEdit("");
-//        issueEditModal.setTitleClear();
-//        Selenide.sleep(2000);
-//        issueEditModal.checkUpdateButtonIsInactive();
-//        Selenide.sleep(2000);
-//        //Selenide.sleep(5000);
-//
-//    }
 }

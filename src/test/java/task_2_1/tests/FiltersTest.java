@@ -24,13 +24,11 @@ public class FiltersTest {
     @DisplayName("Поиск по существующему названию выдает результирующую таску/таски")
     void successfulSearchWithExistedTitle() {
         IssuesPage issuesPage = new IssuesPage().openPage();
-        //Selenide.sleep(2000);
-        String searchItem = "Оптимизация использования памяти";
+        String searchItem = "Оптимизация загрузки медиа-контента";
         issuesPage.searchBar(searchItem);
-        $x("//div[contains(@class, 'MuiPaper-outlined')]/following::h6[text()='" + searchItem + "']")
+        $x("//div[contains(@class,'MuiPaper-root')][.//h6[text()='" + searchItem + "']]")
                 .shouldBe(visible);
 
-        //Selenide.sleep(2000);
     }
 
     @Test
